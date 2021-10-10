@@ -1,0 +1,26 @@
+
+
+5894. Two Out of Three
+
+Difficulty:Easy
+Given three integer arrays nums1, nums2, and nums3, return a distinct array containing all the values that are present in at least two out of the three arrays. You may return the values in any order.
+
+class Solution:
+    def twoOutOfThree(self, nums1: List[int], nums2: List[int], nums3: List[int]) -> List[int]:
+        arr=[]
+        for i in range(0,len(nums1)+1):
+            for j in range(0,len(nums2)+1):
+                for k in range(0,len(nums3)+1):
+                    if nums1[i] in (nums2 or nums3):
+                        arr.append(nums1[i])
+                        i+=1
+                    print(arr)
+                    if nums2[j] in (nums1 or num3):
+                        arr.append(nums2[j])
+                        print(arr)
+                    if nums3[k] in (nums2 or nums1) :
+                        arr.append(nums3[k])
+                        print(arr)
+                    else:
+                        return arr
+        
